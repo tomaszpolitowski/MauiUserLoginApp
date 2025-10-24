@@ -1,0 +1,53 @@
+# --- .NET / build ---
+**/bin/
+**/obj/
+**/publish/
+**/artifacts/
+*.log
+
+# --- Visual Studio / Rider / VS Code ---
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+# --- NuGet ---
+packages/
+*.nupkg
+# (global-packages i tak są w profilu użytkownika)
+
+# --- MAUI / Android ---
+# (Uwaga: NIE ignoruj całego Platforms/)
+**/*.apk
+**/*.aab
+**/*.ap_
+**/*.keystore
+**/*.jks
+
+# --- MAUI / iOS ---
+**/*.ipa
+**/*.dSYM
+**/*.dSYM.zip
+**/build/
+**/*.xcuserstate
+**/*.xcuserdata/
+**/*.xcworkspace/xcuserdata/
+
+# --- macOS / Windows śmieci systemowe ---
+.DS_Store
+Thumbs.db
+
+# --- Sekrety / środowisko (jeśli używasz) ---
+.env
+*.pfx
+*.snk
+
+# --- Testy / narzędzia (opcjonalnie) ---
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
