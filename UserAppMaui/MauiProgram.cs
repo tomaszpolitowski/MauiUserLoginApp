@@ -23,8 +23,12 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 
+        // Windows
+        const string ApiBaseUrl = "https://localhost:7067/";
+        // const string ApiBaseUrl = "https://10.0.2.2:7067/";
+
         // Services
-        builder.Services.AddSingleton<ApiClient>();
+        builder.Services.AddSingleton(new ApiClient(ApiBaseUrl));
 
         // ViewModels
         builder.Services.AddTransient<LoginViewModel>();
@@ -36,6 +40,9 @@ public static class MauiProgram
         builder.Services.AddTransient<RegisterPage>();
         builder.Services.AddTransient<ProfilePage>();
 
-        return builder.Build();
+        var app = builder.Build();
+        App.Services = app.Services;
+
+        return app;
     }
 }
